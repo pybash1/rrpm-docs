@@ -15,3 +15,7 @@ description: Configuration file for RRPM
 
 * `display_output`: Boolean that determines if the raw output of the commands ran or shown or not.
 * `extensions`: List of strings where each determines the file name of an extension.
+
+### \[extensions] Section
+
+* `ignore_extension_load_error`: Boolean that determines whether to ignore extension loading errors or not.
