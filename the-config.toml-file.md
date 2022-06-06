@@ -14,8 +14,9 @@ description: Configuration file for RRPM
 ### \[cli] Section
 
 * `display_output`: Boolean that determines if the raw output of the commands ran or shown or not.
-* `extensions`: List of strings where each determines the file name of an extension.
+* `ignore_extension_load_error`: Boolean that determines whether to ignore extension loading errors or not.
 
 ### \[extensions] Section
 
-* `ignore_extension_load_error`: Boolean that determines whether to ignore extension loading errors or not.
+* `presets`: List of strings where each determines the file name of a preset extension.
+* `hooks`: List of strings where each determines the file name of a hook extension.
