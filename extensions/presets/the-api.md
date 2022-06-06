@@ -1,5 +1,5 @@
 ---
-description: The Extension API
+description: The Preset Extension API
 ---
 
 # The API
@@ -21,7 +21,7 @@ def load_extension(path, name):
 
 Hence, any extension that has the same name as other extensions the user already has installed or is part of the standard library, can cause conflicts. It is recommended not to name them so.
 
-Every extensions must have a `Preset` class as shown below with an initialization function that initializes the `name` variable. The data of this variable is used as the name displayed as the choices in the CLI.
+Every extension must have a `Preset` class as shown below with an initialization function that initializes the `name` variable. The data of this variable is used as the name displayed as the choices in the CLI.
 
 ```python
 class Preset:

@@ -10,5 +10,12 @@
 ## Extensions
 
 * [Overview](extensions/overview.md)
-* [The API](extensions/the-api.md)
 * [Errors](extensions/errors.md)
+
+### Presets
+
+* [The API](extensions/presets/the-api.md)
+
+### Hooks
+
+* [The API](extensions/hooks/the-api.md)
