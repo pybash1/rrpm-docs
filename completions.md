@@ -58,5 +58,5 @@ python -m rrpm --install-completion pwsh
 {% endtabs %}
 
 {% hint style="warning" %}
-Shell needs to be restarted for changes to take effet
+Shell needs to be restarted for changes to take effect
 {% endhint %}
