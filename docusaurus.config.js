@@ -131,8 +131,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} RRPM. Built with Docusaurus.`,
       },
       prism: {
-        theme: darkCodeTheme,
-        darkTheme: lightCodeTheme,
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };

@@ -1,0 +1,70 @@
+---
+sidebar_position: 2
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Completions
+
+RRPM supports installing completions for various different shells, thanks to [Typer](https://typer.tiangolo.com).
+
+<Tabs>
+<TabItem value="bash" label="Bash">
+
+```bash
+python -m rrpm --install-completion bash
+```
+</TabItem>
+
+<TabItem value="fish" label="Fish">
+
+```bash
+python -m rrpm --install-completion fish
+```
+</TabItem>
+
+<TabItem value="zsh" label="Zsh">
+
+```bash
+python -m rrpm --install-completion zsh
+```
+
+Add the following line to your `~/.zshrc` file
+
+```
+fpath+=~/.zfunc
+```
+</TabItem>
+
+<TabItem value="omz" label="Oh-My-Zsh">
+
+```bash
+mkdir $ZSH_CUSTOM/plugins/rrpm
+python -m rrpm --show-completion zsh > $ZSH_CUSTOM/plugins/rrmp/_rrpm
+```
+
+Edit the plugins line in your `~/.zshrc` to add the rrpm plugin
+
+```
+plugins = (rrpm ...)
+```
+</TabItem>
+
+<TabItem value="powershell" label="Powershell">
+
+```bash
+python -m rrpm --install-completion powershell
+```
+</TabItem>
+
+<TabItem value="pwsh" label="PWSH">
+
+```bash
+python -m rrpm --install-completion pwsh
+```
+</TabItem>
+</Tabs>
+
+:::warning
+Shell needs to be restarted for changes to take effect
+:::

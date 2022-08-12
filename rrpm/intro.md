@@ -2,46 +2,44 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+### System Requirements
 
-## Getting Started
+RRPM requires Python 3.7+. A minimum 8-bit color system terminal is recommended although 4-bit terminals are also supported. Package managers need to be installed for being available as part of presets.
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
 
-### What you'll need
+### Installation
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+**RRPM** can be installed through pip or by building from the source.
 
-## Generate a new site
+:::info
+Installing through `pip` is recommended
+:::
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```bash title=Terminal
+pip install rrpm
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+#### Building from Source
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```bash title=Terminal
+git clone https://github.com/pybash1/rrpm.git
+cd rrpm
+poetry install
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### Checking the Installation
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+You can check if RRPM is installed correctly by runnning the following command
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+```bash title=Terminal
+python -m rrpm --help // or rrpm --help if you installed it globally
+```
+### Uninstall
+Uninstalling RRPM is as simple as installing it
+
+```bash title=Terminal
+pip uninstall rrpm
+```
