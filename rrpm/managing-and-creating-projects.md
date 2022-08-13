@@ -70,6 +70,7 @@ Certain projects require certain tools to be installed for them to work
 We will use the `rrpm create` command to generate projects based on the preset and variation we select as shown below.
 
 <!-- ![Creating A Project](<.gitbook/assets/rrpm (1).gif>) -->
+![tutorial](./assets/creating-project.gif)
 
 #### Usage
 

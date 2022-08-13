@@ -16,7 +16,9 @@ Successfully cloned repository in github.com/pybash1/rrpm
 
 The above command clones the `pybash1/rrpm` repository to the directory `%USERPROFILE%\Projects` on Windows and `~/Projects` on Unix by default. this can be changed in the `config.toml` file.
 
-[the-config.toml-file.md](the-config.toml-file.md)
+:::tip
+Read more about the config file [here](./the-config-toml-file.md)
+:::
 
 #### Usage
 
