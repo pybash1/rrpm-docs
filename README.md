@@ -1,65 +1,41 @@
----
-description: Welcome to RRPM Documentation!
-cover: .gitbook/assets/banner.png
-coverY: 0
----
+# Website
 
-# Introduction
-
-### System Requirements
-
-RRPM requires Python 3.7+. A minimum 8-bit color system terminal is recommended although 4-bit terminals are also supported. Package managers need to be installed for being available as part of presets.
-
-
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
-**RRPM** can be installed through pip or by building from the source.
-
-{% hint style="info" %}
-Installing through pip is recommended
-{% endhint %}
-
-{% tabs %}
-{% tab title="Universal" %}
-```bash
-pip install rrpm
 ```
-{% endtab %}
-{% endtabs %}
-
-#### Building from Source
-
-{% tabs %}
-{% tab title="Universal" %}
-```bash
-git clone https://github.com/pybash1/rrpm.git
-cd rrpm
-poetry install
+$ yarn
 ```
-{% endtab %}
-{% endtabs %}
 
-### Checking the Installation
+### Local Development
 
-You can check if RRPM is installed correctly by runnning the following command
-
-{% tabs %}
-{% tab title="Universal" %}
-```bash
-python -m rrpm --help // or rrpm --help if you installed it globally
 ```
-{% endtab %}
-{% endtabs %}
-
-### Uninstall
-
-Uninstalling RRPM is as simple as installing it
-
-{% tabs %}
-{% tab title="Universal" %}
-```bash
-pip uninstall rrpm
+$ yarn start
 ```
-{% endtab %}
-{% endtabs %}
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

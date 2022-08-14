@@ -1,10 +1,8 @@
 ---
-description: >-
-  Corrupted the config file? Regenerate it using the rrpm config --regenerate
-  command
+sidebar_position: 7
 ---
 
-# Viewing and Regenerating the Config
+# Viewing and Regenerating or Customizing the Config
 
 ### Viewing the Current Config File
 
@@ -24,3 +22,13 @@ $ python -m rrpm config
 $ python -m rrpm config --regenerate
 Config file regenerated successfully!
 ```
+
+### Customizing the Config File
+
+:::note
+New in version 1.4.0
+:::
+
+The `--generate` flag in the `rrpm config` command, provides an interactive prompt to customize your config.
+
+![customizing config](./assets/customizing-config.gif)

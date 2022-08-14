@@ -1,6 +1,4 @@
----
-description: The Hook Extension API
----
+
 
 # The API
 
@@ -26,7 +24,6 @@ Every extension must have a `pre_fetcht` and `post_fetch` functions. `pre_fetch`
 ```python
 def pre_fetch(url):
     # do something
-
 def post_fetch(url):
     # do something
 ```

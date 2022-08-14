@@ -1,6 +1,3 @@
----
-description: The Preset Extension API
----
 
 # The API
 
