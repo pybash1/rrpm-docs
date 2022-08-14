@@ -33,10 +33,18 @@ Options:
 
 ### Listing Cloned Repositories
 
-The `rrpm list` command can be used to display a tree of the of the projects cloned to the root directory as shown below
+:::info
+Starting from v1.4.0, rrpm comes with 2 commands to list cloned repositores: `tree` and `list`
+:::
+
+:::warning
+Start from v.1.4.0, `rrpm list` has been renamed to `rrpm tree`
+:::
+
+The `rrpm tree` command can be used to display a tree of the of the projects cloned to the root directory as shown below
 
 ```bash
-$ python -m rrpm list
+$ python -m rrpm tree
 C:\Users\mitra\Projects
   |- github.com
       |- CutCode-org
@@ -52,13 +60,86 @@ C:\Users\mitra\Projects
           |- rrpm
 ```
 
+#### Usage
+
+```bash
+Usage: rrpm tree [OPTIONS]
+
+  List all cloned repositories and generated projects
+
+Options:
+  --help  Show this message and exit.
+```
+
+The `rrpm list` command can be used to display a table containing the metadata for all cloned repositories as shown below
+
+```bash
+$ python -m rrpm list
+                         List of Repositories
+┌────────────┬───────────────┬────────────┬──────────────────────────┐
+│ Site       │ Repository    │ Owner      │ Shorthand                │
+├────────────┼───────────────┼────────────┼──────────────────────────┤
+│ github.com │ api           │ authdeck   │ authdeck/api             │
+│ github.com │ app           │ authdeck   │ authdeck/app             │
+│ github.com │ docs          │ authdeck   │ authdeck/docs            │
+│ github.com │ landing       │ authdeck   │ authdeck/landing         │
+│ github.com │ .dotfiles     │ pybash1    │ pybash1/.dotfiles        │
+│ github.com │ pybash1       │ pybash1    │ pybash1/pybash1          │
+│ github.com │ pocketbase    │ pybsah1    │ pybash1/pocketbase       │
+│ github.com │ portfolio     │ pybash1    │ pybash1/portfolio        │
+│ github.com │ seas          │ pybash1    │ pybash1/seas             │
+│ github.com │ bat           │ catppuccin │ catppuccin/bat           │
+│ github.com │ cursors       │ catppuccin │ catppuccin/cursors       │
+│ github.com │ windows-files │ catppuccin │ catppuccin/windows-files │
+│ github.com │ yasb          │ denBot     │ denBot/yasb              │
+│ github.com │ open-sponsor  │ milan090   │ milan090/open-sponsor    │
+│ github.com │ mov-cli       │ mov-cli    │ mov-cli/mov-cli          │
+│ github.com │ maze.py       │ pipeseroni │ pipeseroni/maze.py       │
+│ github.com │ .dotfiles     │ pybash1    │ pybash1/.dotfiles        │
+│ github.com │ befit         │ pybash1    │ pybash1/befit            │
+│ github.com │ gitfo         │ pybash1    │ pybash1/gitfo            │
+│ github.com │ image3        │ pybash1    │ pybash1/image3           │
+│ github.com │ learnist      │ pybash1    │ pybash1/learnist         │
+│ github.com │ openauth      │ pybash1    │ pybash1/openauth         │
+│ github.com │ portfolio     │ pybash1    │ pybash1/portfolio        │
+│ github.com │ rrpm          │ pybash1    │ pybash1/rrpm             │
+│ github.com │ solodustries  │ pybash1    │ pybash1/solodustries     │
+│ github.com │ tapettim      │ pybash1    │ pybash1/tapettim         │
+│ github.com │ docs          │ rrpm-org   │ rrpm-org/docs            │
+│ github.com │ rrpm          │ rrpm-org   │ rrpm-org/rrpm            │
+│ github.com │ rrpmpkg       │ rrpm-org   │ rrpm-org/rrpmpkg         │
+└────────────┴───────────────┴────────────┴──────────────────────────┘
+Total Repositories: 29
+```
+
 The root directory is as per the `config.toml` file.
 
 #### Usage
 
 ```bash
-Usage: python -m rrpm list [OPTIONS]
-  List all cloned repositories and generated projects
+Usage: rrpm list [OPTIONS]
+
+Options:
+  --help  Show this message and exit.
+```
+
+### Removing Cloned Repositories
+
+:::note
+New in verson v1.4.0
+:::
+
+The `rrpm remove` command can be used to remove a cloned repository or generated project.
+
+#### Usage
+```bash
+Usage: rrpm remove [OPTIONS] SHORTHAND
+
+  Remove a cloned repository
+
+Arguments:
+  SHORTHAND  [required]
+
 Options:
   --help  Show this message and exit.
 ```
