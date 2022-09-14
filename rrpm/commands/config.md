@@ -1,8 +1,4 @@
----
-sidebar_position: 7
----
-
-# Viewing and Regenerating or Customizing the Config
+# config
 
 ### Viewing the Current Config File
 
@@ -31,4 +27,4 @@ New in version 1.4.0
 
 The `--generate` flag in the `rrpm config` command, provides an interactive prompt to customize your config.
 
-![customizing config](./assets/customizing-config.gif)
+![customizing config](../assets/customizing-config.gif)

@@ -1,8 +1,7 @@
 ---
-sidebar_position: 5
 ---
 
-# The config.toml file
+# Configuration
 
 `config.toml` is the file used to configure settings for RRPM. It is located in `%LOCALAPPDATA%\rrpm` on Windows and `~/.config/rrpm` on Unix.
 

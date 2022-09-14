@@ -1,37 +1,4 @@
----
-sidebar_position: 3
----
-
-# Managing Remote Repositories
-
-### Cloning Remote Repositories
-
-Remote Git repositories such as those hosted on GitHub or GitLab can be cloned by using the `rrpm get` command as shown below.
-
-```bash
-$ python -m rrpm get github.com/pybash1/rrpm # notice that the https:// and .git are optional.
-Fetching GitHub Repository
-Successfully cloned repository in github.com/pybash1/rrpm
-```
-
-The above command clones the `pybash1/rrpm` repository to the directory `%USERPROFILE%\Projects` on Windows and `~/Projects` on Unix by default. this can be changed in the `config.toml` file.
-
-:::tip
-Read more about the config file [here](./the-config-toml-file.md)
-:::
-
-#### Usage
-
-```bash
-Usage: python -m rrpm get [OPTIONS] URL
-  Clone a remote repository to directory specified in config
-Arguments:
-  URL  [required]
-Options:
-  --help  Show this message and exit.
-```
-
-### Listing Cloned Repositories
+# list
 
 :::info
 Starting from v1.4.0, rrpm comes with 2 commands to list cloned repositores: `tree` and `list`
@@ -40,36 +7,6 @@ Starting from v1.4.0, rrpm comes with 2 commands to list cloned repositores: `tr
 :::warning
 Start from v.1.4.0, `rrpm list` has been renamed to `rrpm tree`
 :::
-
-The `rrpm tree` command can be used to display a tree of the of the projects cloned to the root directory as shown below
-
-```bash
-$ python -m rrpm tree
-C:\Users\mitra\Projects
-  |- github.com
-      |- CutCode-org
-          |- CutCode-svelte
-      |- github
-          |- gitignore
-      |- pastegram
-          |- backend
-      |- pybash1
-          |- pm
-          |- portfolio
-          |- pybash1
-          |- rrpm
-```
-
-#### Usage
-
-```bash
-Usage: rrpm tree [OPTIONS]
-
-  List all cloned repositories and generated projects
-
-Options:
-  --help  Show this message and exit.
-```
 
 The `rrpm list` command can be used to display a table containing the metadata for all cloned repositories as shown below
 
@@ -118,27 +55,6 @@ The root directory is as per the `config.toml` file.
 
 ```bash
 Usage: rrpm list [OPTIONS]
-
-Options:
-  --help  Show this message and exit.
-```
-
-### Removing Cloned Repositories
-
-:::note
-New in verson v1.4.0
-:::
-
-The `rrpm remove` command can be used to remove a cloned repository or generated project.
-
-#### Usage
-```bash
-Usage: rrpm remove [OPTIONS] SHORTHAND
-
-  Remove a cloned repository
-
-Arguments:
-  SHORTHAND  [required]
 
 Options:
   --help  Show this message and exit.

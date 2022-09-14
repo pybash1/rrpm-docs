@@ -1,8 +1,5 @@
----
-sidebar_position: 2
----
 
-# Migrating from Other Tools
+# migrate
 
 rrpm provides an easy way to migrate from other tools such as `fgh`, `ghq` or even your own project structure. The method for migration is same regardless of the tool and is just one command.
 
