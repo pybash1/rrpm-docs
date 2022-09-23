@@ -1,0 +1,100 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-gray-900">
+    <div class="grid grid-cols-6 gap-0">
+      <aside
+        class="w-full p-6 dark:bg-gray-800 dark:text-gray-100 min-h-screen"
+      >
+        <nav class="space-y-8 text-sm">
+          <div class="space-y-2">
+            <h2
+              class="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"
+            >
+              Getting Started
+            </h2>
+            <div class="flex flex-col space-y-1">
+              <a rel="noopener noreferrer" href="#">Installation</a>
+              <a rel="noopener noreferrer" href="#">Plugins</a>
+              <a rel="noopener noreferrer" href="#">Migrations</a>
+              <a rel="noopener noreferrer" href="#">Appearance</a>
+              <a rel="noopener noreferrer" href="#">Mamba UI</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h2
+              class="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"
+            >
+              Dashboard
+            </h2>
+            <div class="flex flex-col space-y-1">
+              <a rel="noopener noreferrer" href="#">Header</a>
+              <a rel="noopener noreferrer" href="#">Drawer</a>
+              <a rel="noopener noreferrer" href="#">Page Title</a>
+              <a rel="noopener noreferrer" href="#">Menus</a>
+              <a rel="noopener noreferrer" href="#">Sidebar</a>
+              <a rel="noopener noreferrer" href="#">Footer</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h2
+              class="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"
+            >
+              Pages
+            </h2>
+            <div class="flex flex-col space-y-1">
+              <a rel="noopener noreferrer" href="#">Homepage</a>
+              <a rel="noopener noreferrer" href="#">Users</a>
+              <a rel="noopener noreferrer" href="#">Tools</a>
+              <a rel="noopener noreferrer" href="#">Settings</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h2
+              class="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"
+            >
+              Misc
+            </h2>
+            <div class="flex flex-col space-y-1">
+              <a rel="noopener noreferrer" href="#">Tutorials</a>
+              <a rel="noopener noreferrer" href="#">Changelog</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <div class="col-span-5">
+        <nav class="flex items-center justify-center max-w-3xl p-4 mx-auto">
+          <ul class="flex items-center text-sm font-medium text-gray-500 gap-2">
+            <li class="hidden lg:block">
+              <a class="px-3 py-2 rounded-lg" href="/"> Home</a>
+            </li>
+
+            <li>
+              <a class="px-3 py-2 rounded-lg" href="/docs"> Documentation</a>
+            </li>
+
+            <li>
+              <a class="px-3 py-2 rounded-lg" href="/marketplace">
+                Extensions</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="text-white px-20 py-10">
+            <h2 class="font-bold text-6xl pb-8">{frontmatter.title}</h2>
+            <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
