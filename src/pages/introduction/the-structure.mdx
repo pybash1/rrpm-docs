@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: The Structure
+section: Introduction
+headings: []
+active: 1
+---
+import Blockquote from "../../components/Blockquote.astro";
+import Code from "../../components/Code.astro";
+
+# heading 1
+## heading 2
+### heading 3
+#### heading 4
+##### heading 5
+###### heading 6
+
+*italic*
+
+**bold**
+
+***italic + bold***
+
+[test](https://test.com)
+
+![image](/terminal.svg)
+
+blockquote below
+
+<Blockquote>test [link in blockquote](https://test.com).</Blockquote>
+
+blockquote above
+
+info below
+
+<Blockquote type="info">test [link in blockquote](https://test.com).</Blockquote>
+
+info above
+
+warning below
+
+<Blockquote type="warning">test [link in blockquote](https://test.com).</Blockquote>
+
+warning above
+
+code below
+<Code code={`
+# python code test
+a = 1
+b = 2
+string = "test"
+def test():
+    print(string)
+    a = b + 2 - a
+    return b+a`} />
+code above
+
+- bullets
+- more
+- test
+- mhm
+
+1. numbers
+2. test
+3. more
+4. test
