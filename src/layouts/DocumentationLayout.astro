@@ -1,6 +1,7 @@
 ---
 import Sidebar from "../components/Sidebar.astro";
 import RightSidebar from "../components/RightSidebar.astro";
+import Footer from "../components/Footer.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -20,7 +21,9 @@ const { frontmatter } = Astro.props;
     <title>{frontmatter.title}</title>
   </head>
   <body class="bg-[#1b1d21] font-['Rubik']">
-    <nav class="px-10 py-3 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-[#ffffff]/5">
+    <nav
+      class="px-10 py-3 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-[#ffffff]/5"
+    >
       <div class="text-white font-semibold text-xl">RRPM</div>
       <div>
         <button
@@ -66,12 +69,17 @@ const { frontmatter } = Astro.props;
         </svg>
       </a>
     </nav>
-    <div class="grid grid-cols-4 gap-4 px-10">
-      <Sidebar />
-      <div class="col-span-2">
-        <slot />
+    <div class="grid grid-cols-4 gap-4 px-10 pt-10">
+      <Sidebar active={frontmatter.active} />
+      <div class="col-span-2 text-[#fff0ed] px-8">
+        <div class="text-md font-['Sora']">{frontmatter.section}</div>
+        <div class="text-3xl font-semibold pt-2">{frontmatter.title}</div>
+        <div class="text-[#969799] pt-8">
+          <slot />
+        </div>
       </div>
-      <RightSidebar />
+      <RightSidebar headings={frontmatter.headings} />
     </div>
+    <Footer />
   </body>
 </html>

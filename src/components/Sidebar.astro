@@ -1,41 +1,45 @@
 ---
+export interface Props {
+    active: number;
+}
 
+const { active } = Astro.props;
 ---
 
 <aside class="border-r border-[#858494]/20">
     <div class="grid gap-y-16">
         <div>
             <div class="font-semibold text-2xl text-[#fff0ed]">Introduction</div>
-            <div class="text-[#70868f] pt-4 font-thin">
-                <div class="text-[#fff0ed] px-8 py-4 border-l-2 border-white">Getting Started</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">The Structure</div>
+            <div class="text-[#70868f] pt-4 font-thin grid">
+                <a href="/" class={`px-8 py-4 border-l-2 ${active == 0 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Getting Started</a>
+                <a href="/quick-start" class={`px-8 py-4 border-l-2 ${active == 1 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>The Structure</a>
             </div>
         </div>
         <div>
             <div class="font-semibold text-2xl text-[#fff0ed]">Commands</div>
-            <div class="text-[#70868f] pt-4 font-thin">
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">get</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">remove</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">tree</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">list</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">migrate</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">config</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">create</div>
+            <div class="text-[#70868f] pt-4 font-thin grid">
+                <a href="/get" class={`px-8 py-4 border-l-2 ${active == 2 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>get</a>
+                <a href="/remove" class={`px-8 py-4 border-l-2 ${active == 3 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>remove</a>
+                <a href="/tree" class={`px-8 py-4 border-l-2 ${active == 4 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>tree</a>
+                <a href="/list" class={`px-8 py-4 border-l-2 ${active == 5 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>list</a>
+                <a href="/migrate" class={`px-8 py-4 border-l-2 ${active == 6 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>migrate</a>
+                <a href="/config" class={`px-8 py-4 border-l-2 ${active == 7 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>config</a>
+                <a href="/create" class={`px-8 py-4 border-l-2 ${active == 8 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>create</a>
             </div>
         </div>
         <div>
             <div class="font-semibold text-2xl text-[#fff0ed]">Configuration</div>
-            <div class="text-[#70868f] pt-4 font-thin">
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">Configuration File</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">Settings</div>
+            <div class="text-[#70868f] pt-4 font-thin grid">
+                <a href="/config-file" class={`px-8 py-4 border-l-2 ${active == 9 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Configuration File</a>
+                <a href="/settings" class={`px-8 py-4 border-l-2 ${active == 10 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Settings</a>
             </div>
         </div>
         <div>
             <div class="font-semibold text-2xl text-[#fff0ed]">Extensions</div>
-            <div class="text-[#70868f] pt-4 font-thin">
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">Extension Manager</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">Marketplace</div>
-                <div class="px-8 py-4 border-l-2 border-[#858494]/50">Types & How to Create</div>
+            <div class="text-[#70868f] pt-4 font-thin grid">
+                <a href="/extension-manager" class={`px-8 py-4 border-l-2 ${active == 11 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Extension Manager</a>
+                <a href="/marketplace" class={`px-8 py-4 border-l-2 ${active == 12 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Marketplace</a>
+                <a href="/types-and-how-to-create" class={`px-8 py-4 border-l-2 ${active == 13 ? "text-[#fff0ed] border-white" : "border-[#858494]/50"}`}>Types & How to Create</a>
             </div>
         </div>
     </div>

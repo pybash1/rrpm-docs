@@ -54,7 +54,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
   <div class="grid grid-cols-4 gap-4 px-10">
-    <Sidebar />
+    <Sidebar active={0} />
     <div class="col-span-2 text-[#fff0ed] px-8">
       <div class="text-md font-['Sora']">Introduction</div>
       <div class="text-3xl font-semibold pt-2">Getting Started</div>
@@ -150,6 +150,6 @@ import Layout from "../layouts/Layout.astro";
         unde officia laborum labore alias vitae reprehenderit.
       </div>
     </div>
-    <RightSidebar />
+    <RightSidebar headings={["Getting Started", "Use Cases"]} />
   </div>
 </Layout>
