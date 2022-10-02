@@ -3,7 +3,8 @@ export interface Props {
     headings: string[];
 }
 
-const { headings } = Astro.props;
+let { headings } = Astro.props;
+if (!headings) headings = [];
 ---
 
 <aside class="text-right">
