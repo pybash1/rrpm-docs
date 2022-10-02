@@ -1,16 +1,17 @@
 ---
 export interface Props {
-    code: string;
+  code: string;
+  lang: "python" | "bash";
 }
 
-const { code } = Astro.props;
+const { code, lang } = Astro.props;
 
 import hljs from "highlight.js";
-import 'highlight.js/styles/tokyo-night-dark.css';
+import "highlight.js/styles/tokyo-night-dark.css";
 
 let highlightedHtml = hljs.highlightAuto(code).value;
-highlightedHtml = highlightedHtml.replaceAll("~\n/~", "<br />")
-highlightedHtml = highlightedHtml.replaceAll("~\t/~", "&nbsp;&nbsp;&nbsp;&nbsp;")
+highlightedHtml.trimStart();
+highlightedHtml.trimEnd();
 ---
 
 <div class="relative my-3">
@@ -18,7 +19,7 @@ highlightedHtml = highlightedHtml.replaceAll("~\t/~", "&nbsp;&nbsp;&nbsp;&nbsp;"
     class="absolute -inset-px -z-10 rounded-[16px] bg-[image:linear-gradient(35deg,_rgba(234,_209,_202,_0.6),_rgba(222,_209,_204,_0.05)_25%,_rgba(203,_209,_207,_0.6)_66%,_rgba(181,_208,_231,_0.14))]"
   >
   </div>
-  <div class="[clip-path:inset(1px_round_16px)] rounded-lg p-6 bg-[#161b22]">
-    <code class="font-medium" set:html={highlightedHtml}></code>
-  </div>
+  <pre class="max-w-[calc(100vw_-_32px)] overflow-auto relative [clip-path:inset(1px_round_16px)] rounded-[16px] bg-[#161b22] px-8">
+    <code class="relative font-medium" set:html={highlightedHtml} />
+  </pre>
 </div>
