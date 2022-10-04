@@ -1,10 +1,9 @@
 ---
 export interface Props {
   code: string;
-  lang: "python" | "bash";
 }
 
-const { code, lang } = Astro.props;
+const { code } = Astro.props;
 
 import hljs from "highlight.js";
 import "highlight.js/styles/tokyo-night-dark.css";
