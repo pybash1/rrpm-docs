@@ -1,4 +1,60 @@
 ---
 layout: ../../layouts/DocumentationLayout.astro
 title: Types & How to Create
+section: Extensions
 ---
+
+import Blockquote from "../../components/Blockquote.astro";
+import Code from "../../components/Code.astro";
+
+RRPM Extensions as of the latest release are simple.
+
+<Blockquote type="warning">
+  Although simple, extensions can be very powerful, so do not install or
+  download extensions from unknown sources
+</Blockquote>
+
+Currently extensions can be made that add custom presets to the create command. I have plans to extend this to allow users to create extensions that add custom commands.
+<br />
+<br />
+### Errors
+In case an exception is raised in an extension, the program terminates immediately and the exception is printed to the console in a prettified way.
+<br />
+<br />
+### The Extension Loader
+The loader is a simple script that loads extensions one by one from the ext_dir as specified in the config.toml file.
+<br />
+The code looks like this
+<Code code={`
+def load_extension(path, name):
+    sys.path.append(path)
+    try:
+        return importlib.import_module(name, package=path)
+    except ImportError:
+        return None`}/>
+
+Hence, any extension that has the same name as other extensions the user already has installed or is part of the standard library, can cause conflicts. It is recommended not to name them so.
+<br />
+### Hooks
+Every hook must have a &nbsp;`pre_fetch`&nbsp; and &nbsp;`post_fetch`&nbsp; function. &nbsp;`pre_fetch`&nbsp; is called before a repository is fetched and &nbsp;`post_fetch`&nbsp; after as shown below. Both the functions should take in a &nbsp;`url`&nbsp; as a parameter.
+<br />
+<Code code={`
+def pre_fetch(url: str):
+    # do something
+def post_fetch(url: str):
+    # do something`}/>
+<br />
+### Presets
+Every preset must have a &nbsp;`Preset`&nbsp; class as shown below with an initialization function that initializes the &nbsp;`name`&nbsp; variable. The data of this variable is used as the name displayed as the choices in the CLI.
+<Code code={`
+class Preset:
+    def __init__(self):
+        self.name = "Option Name"`}/>
+The class must also have an &nbsp;`on_select`&nbsp; method which is called if the preset is selected. It must also accept a &nbsp;`repository`&nbsp; and a &nbsp;`name`&nbsp; as parameters.
+<Code code={`
+class Preset:
+    def __init__(self):
+        self.name = "Option Name"
+        
+    def on_select(self, repository, name):
+        # generate project`}/>

@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: Completions
+section: Introduction
+headings: ["Bash", "Fish", "Zsh", "Oh-My-Zsh", "Powershell", "PWSH"]
+---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+RRPM supports installing completions for various different shells, thanks to [Typer](https://typer.tiangolo.com).
+
+#### Bash
+<Code code={`
+python -m rrpm --install-completion bash`} />
+<br />
+<br />
+#### Fish
+<Code code={`
+python -m rrpm --install-completion fish`} />
+<br />
+<br />
+
+#### Zsh
+<Code code={`
+python -m rrpm --install-completion zsh`} />
+
+Add the following line to your &nbsp;`~/.zshrc`&nbsp; file
+
+<Code code={`
+fpath+=~/.zfunc`} />
+
+<br />
+<br />
+
+#### Oh-My-Zsh
+<Code code={`
+mkdir $ZSH_CUSTOM/plugins/rrpm
+python -m rrpm --show-completion zsh > $ZSH_CUSTOM/plugins/rrmp/_rrpm`} />
+
+Edit the plugins line in your &nbsp;`~/.zshrc`&nbsp; to add the rrpm plugin
+
+<Code code={`
+plugins = (rrpm ...)`} />
+
+<br />
+<br />
+
+#### Power&shell
+<Code code={`
+python -m rrpm --install-completion powershell`} />
+<br />
+<br />
+
+#### PWSH
+<Code code={`
+python -m rrpm --install-completion pwsh`} />
+
+<br />
+<br />
+
+<Blockquote type="warning">Shell needs to be restarted for changes to take effect</Blockquote>

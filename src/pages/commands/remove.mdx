@@ -1,4 +1,23 @@
 ---
 layout: ../../layouts/DocumentationLayout.astro
 title: remove
+section: Commands
 ---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+<Blockquote type="note">New in version v1.4.0</Blockquote>
+
+The &nbsp;`rrpm remove`&nbsp; command can be used to remove a cloned repository or generated project.
+
+#### Usage
+<Code code={`
+Usage: rrpm remove [OPTIONS] SHORTHAND
+
+  Remove a cloned repository
+
+Arguments:
+  SHORTHAND  [required]
+
+Options:
+  --help  Show this message and exit.`} />

@@ -1,4 +1,39 @@
 ---
 layout: ../../layouts/DocumentationLayout.astro
 title: tree
+section: Commands
 ---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+<Blockquote type="info">Starting from v1.4.0, rrpm comes with 2 commands to list cloned repositores: `tree` and `list`</Blockquote>
+<Blockquote type="warning">Start from v.1.4.0, `rrpm list` has been renamed to `rrpm tree`</Blockquote>
+
+The &nbsp;`rrpm tree`&nbsp; command can be used to display a tree of the of the projects cloned to the root directory as shown below
+
+<Code code={`
+$ python -m rrpm tree
+C:\Users\mitra\Projects
+  |- github.com
+      |- CutCode-org
+          |- CutCode-svelte
+      |- github
+          |- gitignore
+      |- pastegram
+          |- backend
+      |- pybash1
+          |- pm
+          |- portfolio
+          |- pybash1
+          |- rrpm`}/>
+
+The root directory is as per the &nbsp;`config.toml`&nbsp; file.
+<br />
+#### Usage
+<Code code={`
+Usage: rrpm tree [OPTIONS]
+
+  List all cloned repositories and generated projects
+
+Options:
+  --help  Show this message and exit.`}/>

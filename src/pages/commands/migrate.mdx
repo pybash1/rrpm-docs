@@ -1,4 +1,25 @@
 ---
 layout: ../../layouts/DocumentationLayout.astro
 title: migrate
+section: Commands
 ---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+rrpm provides an easy way to migrate from other tools such as &nbsp;`fgh`&nbsp;, &nbsp;`ghq`&nbsp; or even your own project structure. The method for migration is same regardless of the tool and is just one command.
+
+<Blockquote type="warning">All your local commits and/or uncommited changes in all the projects will be lost</Blockquote>
+
+The &nbsp;`rrpm migrate`&nbsp; command migrates all the repositories from the given directory.
+<br />
+#### Usage
+<Code code={`
+Usage: rrpm migrate [OPTIONS] PATH
+
+  Migrate and import all repositories from another directory
+
+Arguments:
+  PATH  [required]
+
+Options:
+  --help  Show this message and exit.`} />
