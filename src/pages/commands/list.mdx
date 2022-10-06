@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: list
+section: Commands
+headings: ["Usage"]
+---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+<Blockquote type="info">Starting from v1.4.0, rrpm comes with 2 commands to list cloned repositores: `tree` and `list`</Blockquote>
+<Blockquote type="warning">Start from v.1.4.0, `rrpm list` has been renamed to `rrpm tree`</Blockquote>
+
+The &nbsp;`rrpm list`&nbsp; command can be used to display a table containing the metadata for all cloned repositories as shown below
+
+<Code code={`
+$ python -m rrpm list
+                         List of Repositories
+┌────────────┬───────────────┬────────────┬──────────────────────────┐
+│ Site       │ Repository    │ Owner      │ Shorthand                │
+├────────────┼───────────────┼────────────┼──────────────────────────┤
+│ github.com │ api           │ authdeck   │ authdeck/api             │
+│ github.com │ app           │ authdeck   │ authdeck/app             │
+│ github.com │ docs          │ authdeck   │ authdeck/docs            │
+│ github.com │ landing       │ authdeck   │ authdeck/landing         │
+│ github.com │ .dotfiles     │ pybash1    │ pybash1/.dotfiles        │
+│ github.com │ pybash1       │ pybash1    │ pybash1/pybash1          │
+│ github.com │ pocketbase    │ pybsah1    │ pybash1/pocketbase       │
+│ github.com │ portfolio     │ pybash1    │ pybash1/portfolio        │
+│ github.com │ seas          │ pybash1    │ pybash1/seas             │
+│ github.com │ bat           │ catppuccin │ catppuccin/bat           │
+│ github.com │ cursors       │ catppuccin │ catppuccin/cursors       │
+│ github.com │ windows-files │ catppuccin │ catppuccin/windows-files │
+│ github.com │ yasb          │ denBot     │ denBot/yasb              │
+│ github.com │ open-sponsor  │ milan090   │ milan090/open-sponsor    │
+│ github.com │ mov-cli       │ mov-cli    │ mov-cli/mov-cli          │
+│ github.com │ maze.py       │ pipeseroni │ pipeseroni/maze.py       │
+│ github.com │ .dotfiles     │ pybash1    │ pybash1/.dotfiles        │
+│ github.com │ befit         │ pybash1    │ pybash1/befit            │
+│ github.com │ gitfo         │ pybash1    │ pybash1/gitfo            │
+│ github.com │ image3        │ pybash1    │ pybash1/image3           │
+│ github.com │ learnist      │ pybash1    │ pybash1/learnist         │
+│ github.com │ openauth      │ pybash1    │ pybash1/openauth         │
+│ github.com │ portfolio     │ pybash1    │ pybash1/portfolio        │
+│ github.com │ rrpm          │ pybash1    │ pybash1/rrpm             │
+│ github.com │ solodustries  │ pybash1    │ pybash1/solodustries     │
+│ github.com │ tapettim      │ pybash1    │ pybash1/tapettim         │
+│ github.com │ docs          │ rrpm-org   │ rrpm-org/docs            │
+│ github.com │ rrpm          │ rrpm-org   │ rrpm-org/rrpm            │
+│ github.com │ rrpmpkg       │ rrpm-org   │ rrpm-org/rrpmpkg         │
+└────────────┴───────────────┴────────────┴──────────────────────────┘
+Total Repositories: 29`}/>
+
+The root directory is as per the &nbsp;`config.toml`&nbsp; file.
+<br />
+#### Usage
+<Code code={`
+Usage: rrpm list [OPTIONS]
+
+Options:
+  --help  Show this message and exit.`}/>

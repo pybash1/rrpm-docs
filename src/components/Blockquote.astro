@@ -1,0 +1,41 @@
+---
+export interface Props {
+  type: "note" | "info" | "warning" | "blockquote";
+}
+
+const { type } = Astro.props;
+---
+
+<div class="relative my-3">
+  <div
+    class="absolute -inset-px -z-10 rounded-[16px] bg-[image:linear-gradient(35deg,_rgba(234,_209,_202,_0.6),_rgba(222,_209,_204,_0.05)_25%,_rgba(203,_209,_207,_0.6)_66%,_rgba(181,_208,_231,_0.14))]"
+  >
+  </div>
+  <blockquote
+    class="[clip-path:inset(1px_round_16px)] rounded-lg p-6 bg-[#161b22]"
+  >
+    <div class="flex flex-row items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+        ><path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20 10c0 5.523-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0s10 4.477 10 10ZM10 4.75A2.25 2.25 0 0 0 7.75 7a.75.75 0 0 1-1.5 0 3.75 3.75 0 1 1 4.977 3.544.92.92 0 0 0-.375.237c-.081.09-.102.163-.102.219v1a.75.75 0 0 1-1.5 0v-1c0-1.002.808-1.638 1.486-1.873A2.251 2.251 0 0 0 10 4.75ZM10 16a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+          fill={`${type == "note" ? "#fff0ed" : type == "info" ? "#5f62e5" : type == "warning" ? "#ff6848" : "#fff0ed"}`}></path>
+      </svg>
+      <div class={`font-semibold ${type == "note" ? "text-[#fff0ed]" : type == "info" ? "text-[#5f62e5]" : type == "warning" ? "text-[#ff6848]" : "text-[#fff0ed]"} text-xl`}>
+        {
+          type == "note"
+            ? "Note"
+            : type == "info"
+            ? "FYI"
+            : type == "warning"
+            ? "Warning"
+            : "Note"
+        }
+      </div>
+    </div>
+    <div class="font-medium flex">
+      <slot />
+    </div>
+  </blockquote>
+</div>

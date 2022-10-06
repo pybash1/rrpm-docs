@@ -1,0 +1,18 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: The Structure
+section: Introduction
+headings: []
+---
+import Code from "../../components/Code.astro";
+
+RRPM organises repositories in the following structure
+
+<Code code={`
+$PROJECT_ROOT
+  |- $DOMAIN
+      |- $USER_NAME
+          |- $REPO_NAME
+`} />
+
+The &nbsp;`$PROJECT_ROOT`&nbsp; can be configured in the [config file](/configuration/config-file).

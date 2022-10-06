@@ -1,0 +1,28 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: get
+section: Commands
+headings: ["Usage"]
+---
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+Remote Git repositories such as those hosted on GitHub or GitLab can be cloned by using the &nbsp;`rrpm get`&nbsp; command as shown below.
+
+<Code code={`
+$ python -m rrpm get github.com/pybash1/rrpm # notice that the https:// and .git are optional.
+Fetching GitHub Repository
+Successfully cloned repository in github.com/pybash1/rrpm`}/>
+
+The above command clones the &nbsp;`pybash1/rrpm`&nbsp; repository to the directory &nbsp;`%USERPROFILE%\Projects`&nbsp; on Windows and &nbsp;`~/Projects`&nbsp; on Unix by default. this can be changed in the &nbsp;`config.toml`&nbsp; file.
+
+<Blockquote type="info">Read more about the config file &nbsp;[here](/configuration/config-file)</Blockquote>
+
+#### Usage
+<Code code={`
+Usage: python -m rrpm get [OPTIONS] URL
+  Clone a remote repository to directory specified in config
+Arguments:
+  URL  [required]
+Options:
+  --help  Show this message and exit.`}/>

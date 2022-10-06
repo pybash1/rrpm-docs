@@ -1,0 +1,17 @@
+---
+export interface Props {
+    headings: string[];
+}
+
+let { headings } = Astro.props;
+if (!headings) headings = [];
+---
+
+<aside class="text-right">
+    <div class="font-medium text-[#fff0ed]">On This Page</div>
+    <div class="grid gap-y-6 pt-6">
+        {headings.map((heading) => (
+            <div class="text-[#fff0ed]">{heading}</div>
+        ))}
+    </div>
+</aside>

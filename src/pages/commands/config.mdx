@@ -1,0 +1,44 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: config
+section: Commands
+headings: ["Viewing the current config file", "Regenerating the config file", "Customizing the config file"]
+---
+
+import Code from "../../components/Code.astro";
+import Blockquote from "../../components/Blockquote.astro";
+
+### Viewing the current config file
+
+The current config file can be viewed by running the command rrpm config.
+
+<Code
+  code={`
+$ python -m rrpm config
+{
+    'root': {'dir': '%USERPROFILE%\\Projects', 'ext_dir': '%LOCALAPPDATA%\\rrpm\\extensions'},
+    'cli': {'display_output': False, 'extensions': ['myext']}
+}`}
+/>
+
+<br />
+<br />
+
+### Regenerating the config file
+
+<Code
+  code={`
+$ python -m rrpm config --regenerate
+Config file regenerated successfully!`}
+/>
+
+<br />
+<br />
+
+### Customizing the config file
+
+<Blockquote type="note">New in version 1.4.0</Blockquote>
+The &nbsp;`--generate`&nbsp; flag in the &nbsp;`rrpm config`&nbsp; command, provides
+an interactive prompt to customize your config.
+<br />
+![demo](https://rrpm.vercel.app/assets/images/customizing-config-72f51c8c7623a6d4d98982bfbaba6cfb.gif)

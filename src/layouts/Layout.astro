@@ -1,0 +1,76 @@
+---
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | RRPM</title>
+  </head>
+  <body class="bg-[#1b1d21] font-['Rubik']">
+    <nav class="px-10 py-3 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-[#ffffff]/5">
+      <div class="text-white font-semibold text-xl">RRPM</div>
+      <div>
+        <button
+          class="py-2 px-3 rounded-lg bg-[#22262c] text-[#515e63] h-10 border-[#272f35] border-2 text-sm w-96 text-left flex justify-between transition-all ease-in-out hover:bg-[#262f41] duration-500"
+        >
+          <div class="flex flex-row items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              ><g clip-path="url(#a)"
+                ><path
+                  d="m14.67 14.665-1.334-1.333m-12-5.667a6.333 6.333 0 1 1 12.667 0 6.333 6.333 0 0 1-12.667 0Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </g><defs
+                ><clipPath id="a"
+                  ><path fill="currentColor" d="M0 0h16v16H0z"></path>
+                </clipPath>
+              </defs>
+            </svg>
+            &nbsp;&nbsp; Search docs
+          </div>
+          <div class="font-bold">Ctrl K</div>
+        </button>
+      </div>
+      <a href="https://github.com/rrpm-org/rrpm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          ><path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M9.997.5a9.973 9.973 0 0 0-6.438 2.357A9.87 9.87 0 0 0 .191 8.8a9.836 9.836 0 0 0 1.305 6.696 9.929 9.929 0 0 0 5.358 4.26c.493.092.68-.214.68-.474s-.01-1.014-.014-1.839c-2.765.597-3.349-1.167-3.349-1.167-.45-1.145-1.102-1.446-1.102-1.446-.902-.612.067-.6.067-.6 1 .07 1.524 1.019 1.524 1.019.885 1.51 2.325 1.073 2.891.818.09-.64.348-1.075.632-1.322-2.208-.249-4.528-1.096-4.528-4.883A3.815 3.815 0 0 1 4.678 7.21c-.102-.249-.443-1.253.097-2.618 0 0 .835-.265 2.734 1.013a9.485 9.485 0 0 1 4.976 0c1.897-1.278 2.73-1.013 2.73-1.013.541 1.362.2 2.366.099 2.618a3.807 3.807 0 0 1 1.025 2.656c0 3.794-2.325 4.63-4.537 4.874.355.308.673.908.673 1.831 0 1.322-.012 2.386-.012 2.711 0 .264.18.571.683.475a9.929 9.929 0 0 0 5.358-4.262 9.836 9.836 0 0 0 1.305-6.697 9.87 9.87 0 0 0-3.37-5.942A9.973 9.973 0 0 0 10 .5h-.003Z"
+            fill="#94A2B8"></path><path
+            d="M3.822 14.688c-.022.049-.1.063-.165.029-.064-.034-.112-.098-.089-.149.023-.05.1-.064.165-.03.064.035.113.1.089.15ZM4.227 15.134a.165.165 0 0 1-.204-.046c-.064-.069-.078-.164-.028-.206.05-.043.138-.023.202.046.064.068.08.163.03.206ZM4.616 15.704c-.06.042-.164 0-.222-.085a.162.162 0 0 1 0-.236c.061-.04.165 0 .222.084.058.083.06.194 0 .237ZM5.147 16.25c-.054.061-.165.045-.255-.037-.09-.082-.112-.193-.058-.252.055-.059.165-.043.259.038.093.08.111.193.054.252ZM5.893 16.572c-.024.077-.136.112-.248.079-.112-.033-.186-.125-.165-.203.022-.079.135-.114.249-.079.113.037.186.123.164.203ZM6.707 16.628c0 .08-.092.15-.21.15-.119.003-.216-.063-.216-.143 0-.08.092-.149.21-.15.12-.002.216.062.216.143ZM7.464 16.504c.014.08-.068.163-.186.183-.119.02-.222-.028-.237-.107-.015-.078.07-.163.186-.184.115-.022.222.027.237.108Z"
+            fill="currentColor"></path>
+        </svg>
+      </a>
+    </nav>
+    <slot />
+    <Footer />
+  </body>
+</html>

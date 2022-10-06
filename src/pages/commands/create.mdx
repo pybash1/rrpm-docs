@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/DocumentationLayout.astro
+title: create
+section: Commands
+headings: ["Usage"]
+---
+
+import Blockquote from "../../components/Blockquote.astro";
+import Code from "../../components/Code.astro";
+
+<Blockquote type="warning">
+  Certain projects require certain tools to be installed for them to work
+</Blockquote>
+
+We will use the &nbsp;`rrpm create`&nbsp; command to generate projects based on the preset and variation we select as shown below.
+<br />
+![](https://rrpm.vercel.app/assets/images/creating-project-4f2d29e0dbbeb497cfebad0a6620d6aa.gif)
+<br />
+
+##### Usage
+<Code code={`
+Usage: python -m rrpm create [OPTIONS] NAME
+  Generate a project from any of the presets and/or its variations
+Arguments:
+  NAME  [required]
+Options:
+  --src / --no-src  [default: no-src]
+  --help            Show this message and exit.`} />
+
+- &nbsp;`[NAME]`&nbsp;: Name of the project. Required for all presets.
+- &nbsp;`src`&nbsp; / &nbsp;`--no-src`&nbsp;: Applicable for poetry projects only
