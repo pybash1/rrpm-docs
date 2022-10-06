@@ -12,7 +12,7 @@ const exts = await Astro.glob("../pages/extensions/*");
             <div class="text-[#70868f] pt-4 font-thin grid">
                 <a href="/" class={`px-8 py-4 border-l-2 ${Astro.url.pathname.toString() == "/" ? "text-[#fff0ed] border-white" : "border-[#858494]/50 text-[#70868f]"}`}>Getting Started</a>
                 {intro.map((doc) => (
-                    <a href={doc.url} class={`px-8 py-4 border-l-2 ${Astro.url.pathname.toString() == doc.url ? "text-[#fff0ed] border-white" : "border-[#858494]/50 text-[#70868f]"}`}>{doc.frontmatter.title}{doc.url}</a>
+                    <a href={doc.url} class={`px-8 py-4 border-l-2 ${Astro.url.pathname.toString() == doc.url ? "text-[#fff0ed] border-white" : "border-[#858494]/50 text-[#70868f]"}`}>{doc.frontmatter.title}{" - "}{Astro.url.pathname}{" - "}{doc.url}</a>
                 ))}
             </div>
         </div>
